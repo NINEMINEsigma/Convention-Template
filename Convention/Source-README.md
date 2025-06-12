@@ -8,7 +8,7 @@
 
 # 目录结构
 
-- [[Runtime]*]([Runtime]/Runtime-READNE.md)
+- [[Runtime]*]([Runtime]/Runtime-README.md)
 
 核心内容, 目标运行时将需要这些内容
 

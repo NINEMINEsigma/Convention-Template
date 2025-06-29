@@ -14,4 +14,9 @@
 
 基础标准`BS`, 增强提案`EP`
 
+- `0.1.0` `BS` Runtime标准
+  - Config 内置功能与配置
+  - File 面向对象的文件系统
+  - Architecture 架构
+
 - `0.0.1` `BS` 建立标准

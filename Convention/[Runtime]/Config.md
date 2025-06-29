@@ -1,4 +1,4 @@
-[返回](./Runtime-READNE.md)
+[返回](./Runtime-README.md)
 
 # /Convention/Runtime/Config
 
@@ -20,17 +20,9 @@
 ## PlatformIndicator包含的内容
 
 - `IsRelease` Debug/Release状态
-- 平台判断
-    - `IsPlatformWindows`
-    - `IsPlatformLinux`
-    - `IsPlatformUnix`
-    - `IsPlatformApple`
-    - `IsPlatformAndroid`
-    - `IsPlatformPosix`
-- 平台架构判断
-    - `IsPlatformx64`
+- `IsPlatform<Name>` 平台判断
+- `IsPlatformX64`平台架构判断
 - 编译器/解释器判断 如`IsMSVC`等
-- `KeyboardInput` 获取非阻塞输入
 - `ApplicationPath` 获取当前应用程序目录
 - `StreamingAssetsPath` 获取StreamingAssets目录
 - `PersistentPath` 获取持久化目录
@@ -48,38 +40,10 @@
 
 用于对齐不同语言间基本实现的颗粒度, 如以下内容
 
-- 程序标记语言
-    - 函数形参
-        - `In` 预状态必须有效
-        - `Out` 后状态必须有效
-        - `InOpt` 若不为空则预状态必须有效
-        - `OutOpt` 若不为空则后状态必须有效
-        - `Read(s)` 以其为首能够读取s指定的元素数量
-        - `ReadByte(s)` 以其为首能够读取s指定的字节数量
-        - `Write(s)` 以其为首能够写入s指定的元素数量
-        - `WriteByte(s)` 以其为首能够写入s指定的字节数量
-        - `FormatString` 作为格式字符串
-    - 函数返回值
-        - `Success(exp)` 表达式为真时函数成功
-        - `CheckReturn` 调用方应检查返回值
-    - 函数
-        - `AcquiresLock(exp)` 会将exp命名的锁对象加锁
-        - `ReleaseLock(exp)` 会将exp命名的锁对象解锁
-        - `Param(n)` 获取由n指定的顺序已命名形参的名称
-    - 结构字段
-        - `FieldSize(s)` 具有由s指定的可写大小数量元素
-        - `FieldSizeByte(s)` 具有由s指定的可写大小数量字节
-    - 结构
-        - `StructSizeByte(s)` 该结构的有效对象具有s指定的字节数量
-    - 通用
-        - `When系列` 检定并控制标记是否生效或函数是否成功
-        - `Range系列` 指定数量级或输入区间
-        - `Current` 当前标记中的对象的同义词
-
 - 类型转换
 - 字符串操作
 - Construct/Destruct 重构造/析构
 - 命令行解析
 - 简单的反射内容
 - 元类型
-- ...
+- 等等...

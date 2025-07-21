@@ -14,9 +14,18 @@
 
 基础标准`BS`, 增强提案`EP`
 
+- `0.2.0` `BS` Visual
+  - Visual 视觉与图像
+
+- `Symbolization` `EP` Symbolization符号化脚本语言
+  - c#先行版本
+
 - `0.1.0` `BS` Runtime标准
+  - GlobalConfig 面向对象的配置文件与资源管理
   - Config 内置功能与配置
   - File 面向对象的文件系统
-  - Architecture 架构
+    - EasySave 适用于多态的序列化/反序列化方案
+  - Web 面向对象的网络系统
+  - Architecture 动态多态的非侵入式架构
 
 - `0.0.1` `BS` 建立标准

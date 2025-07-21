@@ -24,20 +24,16 @@
 
 全局配置管理模块，提供配置文件操作和日志系统
 
-- [Web](Web.md)
+- [Web*](Web.md)
 
-网络工具模块，提供HTTP客户端和URL操作功能
+网络工具模块，提供网络服务相关功能
 
-- [Math*](Math.md)
-
-数学工具模块，提供常用数学计算功能
-
-- [Plugins*](Plugins.md)
+- [Plugins](Plugins.md)
 
 插件系统模块，提供扩展机制和平台特定功能
 
-- [EasySave](EasySave.md)
+- [EasySave*](EasySave.md)
 
-完整的序列化和数据持久化系统，提供易用的数据存储功能
+适用于多态的数据持久化系统，提供易用的数据存储功能
 
 

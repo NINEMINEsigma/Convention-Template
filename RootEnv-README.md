@@ -14,11 +14,12 @@
 
 基础标准`BS`, 增强提案`EP`
 
-- `0.2.0` `BS` Visual
-  - Visual 视觉与图像
+- `Asynchrony` `EP` Async异步表达式
 
-- `Symbolization` `EP` Symbolization符号化脚本语言
-  - c#先行版本
+- `Visual` `EP` Visual
+  - Visual 视觉与图像
+  1. BS建立
+  2. 修改为EP
 
 - `0.1.0` `BS` Runtime标准
   - GlobalConfig 面向对象的配置文件与资源管理

@@ -14,6 +14,8 @@
 
 基础标准`BS`, 增强提案`EP`
 
+- `0.1.1` `BS` Architecture 增强, 允许Unregister
+
 - `Asynchrony` `EP` Async异步表达式
 
 - `Visual` `EP` Visual

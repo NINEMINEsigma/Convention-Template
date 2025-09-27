@@ -14,13 +14,11 @@
 信号接口，用于事件系统的消息传递
 
 ### IModel
-模型接口，定义数据模型的序列化和反序列化能力：
-- `Save()` 保存数据到字符串
-- `Load(string data)` 从字符串加载数据
+模型类接口, 仅作为接口倒置
 
 ### IConvertable<T>
 转换接口，提供类型转换能力：
-- `ConvertTo()` 转换为目标类型
+- `T ConvertTo()` 转换为目标类型
 
 ### IConvertModel<T>
 组合接口，同时继承 `IModel` 和 `IConvertable<T>`
@@ -41,34 +39,33 @@
 
 ## 注册系统
 
-### 对象注册
-- `Register(Type slot, object target, Action completer, params Type[] dependences)`
-- `Register<T>(T target, Action completer, params Type[] dependences)`
+### 对象注册相关
 
-提供基于类型的依赖注入容器：
-- 支持依赖关系管理
-- 支持注册完成回调
-- 自动解析依赖顺序
+向slot槽注册实例target, 并设置依赖dependences, 当槽的所有依赖的槽都注册完成后触发completer
+- `void Register(Type slot, object target, Action completer, Type[] dependences) throw(InvalidOperation)`
+
+解除slot槽中的注册
+- `bool Unregister(Type slot) noexcpect`
 
 ### 注册查询
-- `Contains(Type type)` / `Contains<T>()`
-- `Get(Type type)` / `Get<T>()`
+- `bool Contains(Type slot)`
+- `bool Get(Type slot)`
 
 ## 事件系统
 
 ### 消息监听
-- `AddListener<Signal>(Type slot, Action<Signal> listener)`
-- `SendMessage(Type slot, ISignal signal)`
-- `SendMessage<Signal>(Signal signal)`
 
-提供类型安全的事件分发机制：
-- 支持按类型注册监听器
-- 支持泛型消息类型
-- 自动管理监听器生命周期
+Listening类, 拥有停止监听的函数`StopListening()`
+- `class Listening`
 
-### Listening类
-监听器管理类，提供：
-- `StopListening()` 停止监听
+向指定的槽slot中添加监听信号Signal的监听器listener
+- `Listening AddListener<Signal>(Type slot, Action<Signal> listener) where Signal : ISignal`
+
+向指定的槽slot发送信号signal
+- `void SendMessage(Type slot, ISignal signal)`
+
+向所有槽广播信号signal
+- `void SendMessage<Signal>(Signal signal)`
 
 ## 时间线系统
 
